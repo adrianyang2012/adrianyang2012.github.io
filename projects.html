@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-
 <html>
 <head>
-<title>Adrian Yang's Website</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+
 
 .body {
   margin: 0;
@@ -38,6 +37,51 @@
 .names {
   font-size: 36pt;
   background-color: Aqua;
+.row {
+  display: flex;
+}
+
+/* Left column (menu) */
+.left {
+  flex: 35%;
+  padding: 15px 0;
+}
+
+.left h2 {
+  padding-left: 8px;
+}
+
+/* Right column (page content) */
+.right {
+  flex: 65%;
+  padding: 15px;
+}
+
+/* Style the search box */
+.mySearch {
+  width: 100%;
+  font-size: 18px;
+  padding: 11px;
+  border: 1px solid #ddd;
+}
+
+/* Style the navigation menu inside the left column */
+.myMenu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.myMenu li a {
+  padding: 12px;
+  text-decoration: none;
+  color: black;
+  display: block
+}
+
+.myMenu li a:hover {
+  background-color: #eee;
+}
 </style>
 </head>
 <body>
@@ -47,17 +91,41 @@
   <a class="active" href="projects">projects</a>
   <a href="accounts">accounts</a>
 </div>
-<div class='names'>
-
-  <p>these are my projects</p>
-  <ul>
-    <li><a href='https://github.com/adrianyang2012/image-detector'>image digger</a></li>
-    <li><a href='https://github.com/adrianyang2012/bit-to-decimal'>bit and decimal converter</a></li>
-    <li><a href='https://colab.research.google.com/drive/1gfWlJExFfEbVWHLrvlcEI1wecQ7yDspQ'>ai number predicter</a></li>
-    <li><a href='https://github.com/adrianyang2012/survive_text_adventure'>text adventure game</a></li>
-    <li><a href='https://github.com/adrianyang2012/dictinary_creater'>dictinary maker(actual dictionarys)</a></li>
-    <li><a href='https://github.com/adrianyang2012/olympic-ratings'>rating system</a></li>
-    <li><a href='https://colab.research.google.com/drive/1qMzaFCscSIsAjULGJH1pcX6NmGiLpnQA#scrollTo=rBVodMCfaEaT'>hacking codes project</a></li>
+<div class="row">
+  <div class="left" style="background-color:#bbb;">
+    <h2>Projects
+    </h2>
+    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+    <ul id="myMenu">
+      <li><a href='https://github.com/adrianyang2012/image-detector'>image digger</a></li>
+    	<li><a href='https://github.com/adrianyang2012/bit-to-decimal'>bit and decimal converter</a></li>
+    	<li><a href='https://colab.research.google.com/drive/1gfWlJExFfEbVWHLrvlcEI1wecQ7yDspQ'>ai number predicter</a></li>
+    	<li><a href='https://github.com/adrianyang2012/survive_text_adventure'>text adventure game</a></li>
+    	<li><a href='https://github.com/adrianyang2012/dictinary_creater'>dictinary maker(actual dictionarys)</a></li>
+    	<li><a href='https://github.com/adrianyang2012/olympic-ratings'>rating system</a></li>
+    	<li><a href='https://colab.research.google.com/drive/1qMzaFCscSIsAjULGJH1pcX6NmGiLpnQA#scrollTo=rBVodMCfaEaT'>hacking codes project</a></li>
     <li><a href='https://colab.research.google.com/drive/1EdGuUHiZinGLzk11Sl1r-vqIO1685FzW#scrollTo=XN0RDk1k_8vL'>gold rush game</a></li>
+    </ul>
+  </div>
+</div>
+
+<script>
+function myFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myMenu");
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
+
 </body>
 </html>
