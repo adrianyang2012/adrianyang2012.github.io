@@ -56,27 +56,28 @@ body {
   padding: 15px;
 }
 
-.mySearch {
+#mySearch {
   width: 100%;
   font-size: 18px;
   padding: 11px;
   border: 1px solid #ddd;
 }
 
-.myMenu {
+/* Style the navigation menu inside the left column */
+#myMenu {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-.myMenu li a {
+#myMenu li a {
   padding: 12px;
   text-decoration: none;
   color: black;
   display: block
 }
 
-.myMenu li a:hover {
+#myMenu li a:hover {
   background-color: #eee;
 }
 </style>
@@ -92,6 +93,7 @@ body {
   <div class="left" style="background-color:#bbb;">
     <h2>Projects
     </h2>
+    
     <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
     <ul id="myMenu">
       <li><a href='https://github.com/adrianyang2012/image-detector'>image digger</a></li>
@@ -101,11 +103,14 @@ body {
     	<li><a href='https://github.com/adrianyang2012/dictinary_creater'>dictinary maker(actual dictionarys)</a></li>
     	<li><a href='https://github.com/adrianyang2012/olympic-ratings'>rating system</a></li>
     	<li><a href='https://colab.research.google.com/drive/1qMzaFCscSIsAjULGJH1pcX6NmGiLpnQA#scrollTo=rBVodMCfaEaT'>hacking codes project</a></li>
-    <li><a href='https://colab.research.google.com/drive/1EdGuUHiZinGLzk11Sl1r-vqIO1685FzW#scrollTo=XN0RDk1k_8vL'>gold rush game</a></li>
+      <li><a href='https://colab.research.google.com/drive/1EdGuUHiZinGLzk11Sl1r-vqIO1685FzW#scrollTo=XN0RDk1k_8vL'>gold rush game</a></li>
+      <li><a href='https://colab.research.google.com/drive/1qeUCQvYQEDFHVVibRc-LrzRvoQ0gLMqq'>patterns model</a></li>
     </ul>
   </div>
 </div>
-
+<div class="right" style="background-color:#596e59;">
+  <p>here are all the big projects I made<p>
+  
 <script>
 function myFunction() {
   var input, filter, ul, li, a, i;
