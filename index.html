@@ -16,7 +16,7 @@
 
 <style>
 
-.body {
+body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -48,14 +48,39 @@
 .names {
   font-size: 36pt;
   background-color: Aqua;
+.bg-img {
+  /* The image used */
+  background-image: url("https://cyber-center.org/wp-content/uploads/2020/09/pexels-kostiantyn-stupak-599982.jpg");
+
+  min-height: 140px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  /* Needed to position the navbar */
+  position: relative;
+}
+
+/* Position the navbar container inside the image */
+.container {
+  position: absolute;
+  margin: 20px;
+  width: auto;
+}
 </style>
 </head>
 <body>
 
-<div class="topnav">
-  <a class="active" href="index">Home</a>
-  <a href="projects">projects</a>
-  <a href="accounts">accounts</a>
+<div class="bg-img">
+  <div class="container">
+    <div class="topnav">
+  		<a class="active" href="index">Home</a>
+  		<a href="projects">projects</a>
+  		<a href="accounts">accounts</a>
+	  </div>
+  </div>
 </div>
 <div class='names'>
   <h1>Hello! </h1>
